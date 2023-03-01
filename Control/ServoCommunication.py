@@ -10,10 +10,6 @@ if __name__ == '__main__':
     x = 0
 
     while True:
-        ser.write(b"Hello from Raspberry Pi!\n")
-        line = ser.readline().decode('utf-8').rstrip()
-        print(line)
-
         while x == 0:
             changeX = input("Insert a X value:")
             changeY = input("Insert a Y value:")
