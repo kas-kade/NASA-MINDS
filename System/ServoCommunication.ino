@@ -1,3 +1,4 @@
+// Servo Library
 #include <Servo.h>
 
 Servo servo1; // Up + Down
@@ -8,9 +9,14 @@ int posY = 0;
 
 void setup() {
   Serial.begin(9600);
+  
+  // Depending on which pin you use for the servo, you attach the servo with the number belonging to the pin
+  // For example: On the arduino, if a servo is connected to the 4th pin, it will be .attach(4)
   servo1.attach(3);
   servo2.attach(5);
 
+  // .write(#) refers to the the angle at which the servo turns to, with 0 being the default position
+  // Can go from 0 to 180
   servo1.write(0);
   servo2.write(0);
 }
@@ -28,8 +34,8 @@ void readSerialPort(){
     posX += x;
     posY += y;
 
-    servo1.(posY);
-    servo2.(posX);
+    servo1.write(posY);
+    servo2.write(posX);
     
     Serial.print("You sent me: ");
     Serial.println(data);
