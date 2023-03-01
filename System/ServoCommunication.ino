@@ -28,8 +28,8 @@ void readSerialPort(){
     posX += x;
     posY += y;
 
-    servo1.(y);
-    servo2.(x);
+    servo1.(posY);
+    servo2.(posX);
     
     Serial.print("You sent me: ");
     Serial.println(data);
